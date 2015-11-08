@@ -1,0 +1,10 @@
+".text.ldif":
+  editor:
+    completions: [
+      "changetype"
+      "modify"
+      "add"
+      "delete"
+      "replace"
+      "objectClass"
+    ]

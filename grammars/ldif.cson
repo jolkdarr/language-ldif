@@ -1,0 +1,69 @@
+fileTypes: [
+  "ldif"
+]
+foldingStartMarker: "^r?dn:"
+foldingStopMarker: "^$"
+name: "LDIF"
+patterns: [
+  {
+    match: "(#).*$\\n?"
+    name: "comment.line.number-sign.ldif"
+  }
+  {
+    match: "^(changetype|add|replace|delete|replica)(?=:)"
+    name: "keyword.attribute.ldif"
+  }
+  {
+    begin: "(?<=changetype:\\s)(add|modify|delete)"
+    end: "(?=^[\\S\\n])"
+    name: "keyword.value.ldif"
+    patterns: [
+      {
+        match: "\\s+(?=\\n)"
+        name: "invalid.illegal"
+      }
+    ]
+  }
+  {
+    match: "^[\\w\\-\\{\\}\\$]+(?=:[:<]?)"
+    name: "variable.attribute.ldif"
+  }
+  {
+    begin: "(?<=[\\w\\}]:\\s)"
+    end: "(?=^[\\S\\n])"
+    name: "string.value.ldif"
+    patterns: [
+      {
+        match: "\\s+(?=\\n)"
+        name: "invalid.illegal"
+      }
+    ]
+  }
+  {
+    begin: "(?<=[\\w\\}]::\\s)"
+    end: "(?=^[\\S\\n])"
+    name: "storage.value.base64.ldif"
+    patterns: [
+      {
+        match: "\\s+(?=\\n)"
+        name: "invalid.illegal"
+      }
+    ]
+  }
+  {
+    begin: "(?<=:<\\s)"
+    end: "(?=^[\\S\\n])"
+    name: "markup.underline.link.ldif"
+    patterns: [
+      {
+        match: "\\s+(?=\\n)"
+        name: "invalid.illegal"
+      }
+    ]
+  }
+  {
+    match: "^-$\\n?"
+    name: "support.separator.ldif"
+  }
+]
+scopeName: "text.ldif"

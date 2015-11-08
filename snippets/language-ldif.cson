@@ -1,0 +1,4 @@
+".text.ldif":
+  "New Attribute/Value Pair":
+    prefix: ":"
+    body: "${1:attribute}: ${2:value}"
