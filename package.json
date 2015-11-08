@@ -13,7 +13,9 @@
   "dependencies": {},
   "readme": "# LDIF support for Atom editor.",
   "readmeFilename": "README.md",
-  "bugs": {},
+  "bugs": {
+      "url": "https://github.com/jolkdarr/language-ldif/issues"
+  },
   "homepage": "http://github.com/jolkdarr/language-ldif",
   "_atomModuleCache": {
     "version": 1,
